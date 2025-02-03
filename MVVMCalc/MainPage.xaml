@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:MVVMCalc.ViewModels"
+             x:Class="MVVMCalc.MainPage"
+             x:DataType="viewmodels:CalculatorViewModel">
+    <VerticalStackLayout Spacing="20" Padding="20">
+        <Entry Placeholder="Number 1" Text="{Binding Number1, Mode=TwoWay}" Keyboard="Numeric"/>
+        <Entry Placeholder="Number 2" Text="{Binding Number2, Mode=TwoWay}" Keyboard="Numeric"/>
+        <Picker Title="Operation" SelectedItem="{Binding Operation, Mode=TwoWay}">
+            <Picker.Items>
+                <x:String>+</x:String>
+                <x:String>-</x:String>
+                <x:String>*</x:String>
+                <x:String>/</x:String>
+            </Picker.Items>
+        </Picker>
+        <Button Text="Calculate" Command="{Binding CalculateCommand}"/>
+        <Button Text="Clear" Command="{Binding ClearCommand}"/>
+        <Label Text="{Binding Result, StringFormat='Result: {0:F2}'}"/>
+    </VerticalStackLayout>
+</ContentPage>
