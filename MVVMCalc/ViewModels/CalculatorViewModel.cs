@@ -36,7 +36,7 @@ namespace MVVMCalc.ViewModels
             }
             catch (Exception ex)
             {
-                // Handle exception, e.g., show error message in UI
+                // Handle exception
                 Result = 0;
             }
         }
